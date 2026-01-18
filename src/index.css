@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans antialiased;
+  }
+}
+
+@layer components {
+  /* Smooth transitions for interactive elements */
+  .btn-primary {
+    @apply bg-accent-gold hover:bg-accent-gold-alt text-primary-dark px-6 sm:px-8 py-3 rounded-lg font-semibold text-base sm:text-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 active:translate-y-0 active:shadow-lg;
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent border-2 border-accent-gold text-accent-gold hover:bg-accent-gold hover:text-primary-dark px-6 sm:px-8 py-3 rounded-lg font-semibold text-base sm:text-lg transition-all duration-300 active:scale-95;
+  }
+
+  /* Card hover effects */
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-2 active:translate-y-0;
+  }
+
+  /* Input focus effects */
+  .input-focus {
+    @apply transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-accent-gold focus:border-accent-gold;
+  }
+
+  /* Touch-friendly tap targets for mobile */
+  @media (max-width: 640px) {
+    button, a {
+      @apply min-h-[44px] min-w-[44px];
+    }
+  }
+}
